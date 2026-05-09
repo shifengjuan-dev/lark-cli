@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+
+### Features
+
+- **im**: Support `--chat-mode topic` in `+chat-create` to create topic chats
+
 ## [v1.0.26] - 2026-05-08
 
 ### Features
