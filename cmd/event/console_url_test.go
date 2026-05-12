@@ -14,7 +14,7 @@ func TestConsoleScopeGrantURL_Feishu(t *testing.T) {
 		"im:message:readonly",
 		"im:message.group_at_msg",
 	})
-	want := "https://open.feishu.cn/app/cli_XXXXXXXXXXXXXXXX/auth?q=im:message:readonly,im:message.group_at_msg&op_from=openapi&token_type=tenant"
+	want := "https://open.feishu-pre.cn/app/cli_XXXXXXXXXXXXXXXX/auth?q=im:message:readonly,im:message.group_at_msg&op_from=openapi&token_type=tenant"
 	if got != want {
 		t.Errorf("url\n got: %s\nwant: %s", got, want)
 	}
@@ -30,7 +30,7 @@ func TestConsoleScopeGrantURL_LarkBrand(t *testing.T) {
 
 func TestConsoleScopeGrantURL_EmptyBrandDefaultsFeishu(t *testing.T) {
 	got := consoleScopeGrantURL("", "cli_x", []string{"im:message"})
-	if got != "https://open.feishu.cn/app/cli_x/auth?q=im:message&op_from=openapi&token_type=tenant" {
+	if got != "https://open.feishu-pre.cn/app/cli_x/auth?q=im:message&op_from=openapi&token_type=tenant" {
 		t.Errorf("unexpected url: %s", got)
 	}
 }

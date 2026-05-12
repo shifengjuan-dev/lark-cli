@@ -24,7 +24,7 @@ func ParseBrand(value string) LarkBrand {
 
 // Endpoints holds resolved endpoint URLs for different Lark services.
 type Endpoints struct {
-	Open     string // e.g. "https://open.feishu.cn"
+	Open     string // e.g. "https://open.feishu-pre.cn"
 	Accounts string // e.g. "https://accounts.feishu.cn"
 	MCP      string // e.g. "https://mcp.feishu.cn"
 	AppLink  string // e.g. "https://applink.feishu.cn"
@@ -42,7 +42,7 @@ func ResolveEndpoints(brand LarkBrand) Endpoints {
 		}
 	default:
 		return Endpoints{
-			Open:     "https://open.feishu.cn",
+			Open:     "https://open.feishu-pre.cn",
 			Accounts: "https://accounts.feishu.cn",
 			MCP:      "https://mcp.feishu.cn",
 			AppLink:  "https://applink.feishu.cn",

@@ -99,7 +99,7 @@ func TestPreflightEventTypes_MissingBlocks(t *testing.T) {
 	if exit.Detail == nil {
 		t.Fatal("expected Detail with hint")
 	}
-	wantURL := "https://open.feishu.cn/app/cli_XXXXXXXXXXXXXXXX/event"
+	wantURL := "https://open.feishu-pre.cn/app/cli_XXXXXXXXXXXXXXXX/event"
 	if !strings.Contains(exit.Detail.Hint, wantURL) {
 		t.Errorf("hint missing subscription URL %q\ngot: %s", wantURL, exit.Detail.Hint)
 	}
@@ -157,7 +157,7 @@ func TestPreflightScopes_Bot_MissingBlocks(t *testing.T) {
 	}
 	hint := exit.Detail.Hint
 	wantSubstrings := []string{
-		"https://open.feishu.cn/app/cli_x/auth?q=",
+		"https://open.feishu-pre.cn/app/cli_x/auth?q=",
 		"im:message.group_at_msg",
 		"token_type=tenant",
 	}
