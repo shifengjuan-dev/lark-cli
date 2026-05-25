@@ -7,8 +7,8 @@ import "testing"
 
 func TestResolveEndpoints_Feishu(t *testing.T) {
 	ep := ResolveEndpoints(BrandFeishu)
-	if ep.Open != "https://open.feishu.cn" {
-		t.Errorf("Open = %q, want feishu.cn", ep.Open)
+	if ep.Open != "https://open.feishu-pre.cn" {
+		t.Errorf("Open = %q, want feishu-pre.cn", ep.Open)
 	}
 	if ep.Accounts != "https://accounts.feishu.cn" {
 		t.Errorf("Accounts = %q, want feishu.cn", ep.Accounts)
@@ -39,13 +39,13 @@ func TestResolveEndpoints_Lark(t *testing.T) {
 
 func TestResolveEndpoints_EmptyDefaultsToFeishu(t *testing.T) {
 	ep := ResolveEndpoints("")
-	if ep.Open != "https://open.feishu.cn" {
-		t.Errorf("Open = %q, want feishu.cn for empty brand", ep.Open)
+	if ep.Open != "https://open.feishu-pre.cn" {
+		t.Errorf("Open = %q, want feishu-pre.cn for empty brand", ep.Open)
 	}
 }
 
 func TestResolveOpenBaseURL(t *testing.T) {
-	if got := ResolveOpenBaseURL(BrandFeishu); got != "https://open.feishu.cn" {
+	if got := ResolveOpenBaseURL(BrandFeishu); got != "https://open.feishu-pre.cn" {
 		t.Errorf("ResolveOpenBaseURL(feishu) = %q", got)
 	}
 	if got := ResolveOpenBaseURL(BrandLark); got != "https://open.larksuite.com" {
